@@ -7,7 +7,7 @@ const LocalStrategy = require('passport-local').Strategy;
  * Seccion Login
  */
 
-passport.use('login', new LocalStrategy(
+passport.use('signin', new LocalStrategy(
     (username, password, done) => {
     UsuariosModel.findOne({ username }, (err, user) => {
         if(err)

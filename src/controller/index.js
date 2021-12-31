@@ -10,8 +10,8 @@ const getRegister = (req, res, next) => {
 
 const postRegister = (req, res, next) => {
     try {
-        console.log(req);
         let user = req.user;
+        console.log(user);
         res.render('pagina', { user })
     } catch (error) {
         console.log(error);
@@ -44,9 +44,9 @@ const getLogin = (req, res, next) => {
 
 const postLogin = (req, res, next) => {
     try {
-        console.log('el req', req);
-            let username = req.body.username;
-            res.render('pagina', { username });
+        console.log('el req', req.body.username);
+            let user = { username: req.body.username};
+            res.render('pagina', { user });
     } catch (error) {
         next(error)
     }

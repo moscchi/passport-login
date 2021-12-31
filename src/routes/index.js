@@ -12,7 +12,7 @@ router.get("/failregister", getFailregister);
 
 // LOGIN
 router.get('/login', getLogin);
-router.post('/login', passport.authenticate('login', { failureRedirect: '/faillogin'}, postLogin));
+router.post('/login', passport.authenticate('signin', { failureRedirect: '/faillogin'}), postLogin);
 router.get('/faillogin', getFaillogin);
 
 // LOGOUT

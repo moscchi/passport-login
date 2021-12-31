@@ -13,18 +13,15 @@ app.set("views", path.join(__dirname, 'views', 'ejs'));
 app.set('view engine', 'ejs');
 app.use(session({
     secret: "desafio",
-    rolling: true,
     resave: false,
     saveUninitialized: false,
-    cookie: {
-        maxAge: 10000
-    }
+    
 }))
+app.use(passport.session());
 app.use(cors("*"));
 app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(routes)
 app.listen(8080, () =>{
